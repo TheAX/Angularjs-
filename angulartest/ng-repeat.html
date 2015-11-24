@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="angular.js"></script>
+</head>
+<body ng-app="helloApp">
+	<div ng-controller="helloController">
+		<div ng-repeat="item in data.items" ng-click="changeText();">hello {{item.name}}</div>
+	</div>
+</body>
+
+<script type="text/javascript">
+	angular.module( 'helloApp', [] )
+		.controller( 'helloController',  [ '$scope', function( $scope ){
+			$scope.data =  { items : [ { key : 1, name : "aaa" }, { key : 2 , name : "bbb" } ] };
+
+			$scope.changeText = function(){
+				$scope.data =  { items: [ { key : 4, name : 'ddd' }, { key : 5 , name: 'fff' } ] };
+			}
+	}]);
+</script>
+</html>

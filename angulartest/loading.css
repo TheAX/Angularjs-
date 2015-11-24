@@ -1,0 +1,30 @@
+﻿.MaskLayer {
+/*    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    
+    width: 100%;
+    height: 100%;
+    
+    background: rgba(0, 0, 255, .5);
+    -webkit-transition: opacity linear 0.25s;
+    transition: opacity linear 0.25s;
+    pointer-events: auto;*/
+
+
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-animation: ngdialog-fadein 0.5s;
+  animation: ngdialog-fadein 0.5s;
+}
+
+.MaskLayer.isClosed {
+    opacity: 0;
+    pointer-events: none;
+}

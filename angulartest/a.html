@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+<script src="saveSvgAsPng.js"></script>
+<script src="jquery-1.11.3.js"></script>
+
+<!-- <script type="text/javascript" src="http://gabelerner.github.io/canvg/rgbcolor.js"></script> 
+<script type="text/javascript" src="http://gabelerner.github.io/canvg/StackBlur.js"></script> -->
+<!-- <script type="text/javascript" src="http://gabelerner.github.io/canvg/canvg.js"></script>  -->
+
+<script src="canvg.js"></script>
+
+
+<body>
+	<!-- <canvas id="canvas" width="1000px" height="600px"></canvas>  -->
+
+	<img src="" alt=""  id="iim" />
+
+
+	<script>
+var div = $('<div>');
+var svg = $('<svg>').attr({'height':'30', 'width':'200','id':'sss'}).appendTo(div);
+var textsvg = $('<text>').attr({'x':'0', 'y':'15','fill':'red'}).text('zhangsen');
+svg.append(textsvg);
+
+var dd = $('<canvas>').attr({'height':'600px','width':'1000px'});
+var svgHtml = div[0].innerHTML;
+canvg(dd[0],svgHtml);
+
+var imgSrc = dd[0].toDataURL("image/png");
+
+$('#iim').attr({'src':imgSrc});
+var a =1;
+</script>
+</body>
+</html>

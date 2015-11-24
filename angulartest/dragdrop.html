@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="dragdrop.css" rel="stylesheet" />
+    <script src="angular.js"></script>
+    <script src="angular-drag-and-drop-lists.js"></script>
+    <script src="dragdrop.js"></script>
+</head>
+
+<body ng-app="demo">
+<div ng-controller="SimpleDemoController">
+
+    <div style="width: 100px; height: 50px; background: red;" dnd-draggable></div>
+    <div ng-repeat="list in models.lists">
+
+        <ul dnd-list="list"
+            dnd-dragover="dragoverCallback(event, index, external, type)"
+            dnd-drop="dropCallback(event, index, item, external, type, 'itemType')"
+            dnd-inserted="insertedCallback(index, event)"
+            >
+            <li ng-repeat="item in list"
+                dnd-draggable="item"
+                dnd-moved="list.splice($index, 1);onMoveCallback($index, event);"
+                dnd-dragend="dragendCallback($index, event);"
+                dnd-effect-allowed="move">
+                {{item.label}}
+            </li>
+        </ul>
+    </div>
+    <!--<li dnd-draggable="item" ng-repeat="item in list" dnd-moved="list.splice($index, 1)"
+            dnd-effect-allowed="move">
+        {{item.label}}
+    </li>-->
+</div>
+</body>
+</html>

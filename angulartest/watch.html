@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+	<script src="angular.js"></script>
+	<script src="watch.js"></script>
+</head>
+<body ng-app="watchApp">
+	<div ng-controller="watchController">
+		<span>{{a}}</span>
+		<span>{{b}}</span>
+		<span>{{c}}</span>
+		<span>{{data.k}}</span>
+		<div ng-controller="childController" ng-click="clickme()">
+			<span>{{data.k}}</span>
+		</div>
+	</div>
+</body>
+</html>

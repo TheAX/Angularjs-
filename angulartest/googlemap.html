@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta charset="utf-8" />
+	
+	<link rel="stylesheet" href="googlemap.css">
+	<!-- <script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script>-->
+	<script src='lodash.min.js'></script>
+	<script src='angular.js'></script>
+	<script src='angular-simple-logger.min.js'></script>
+	<script src='angular-google-maps.min.js'></script>
+	<script src='googlemap.js'></script>
+</head>
+<body ng-app="googleMapApp">
+	<div ng-controller="googleMapController">
+		<ui-gmap-google-map center='map.center' zoom='map.zoom'>
+			<ui-gmap-markers models="map.markers" coords="'self'" icon="'icon'" options="'options'"></ui-gmap-markers>
+			<!-- <ui-gmap-marker ng-repeat="m in map.markers"  coords="m.coords"  idKey="m.id"></ui-gmap-marker> -->
+		</ui-gmap-google-map>
+	</div>
+</body>
+</html>

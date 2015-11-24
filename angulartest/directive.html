@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+             
+	<link rel="stylesheet" href="googlemap.css"/>
+	<link rel="stylesheet" href="jquery-ui.min.css"/>
+	<script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script>
+	<script src="jquery-1.11.3.js"></script>
+	<script src="jquery-ui.min.js"></script>
+	<script src="angular.js"></script>
+	<script src='lodash.min.js'></script>
+	<script src='angular-simple-logger.min.js'></script>
+	<script src='angular-google-maps.min.js'></script>
+	<script src='angular-dragdrop.js'></script>
+
+	<script src="jquery-1.11.3.js"></script>
+	<script src="directive.js"> </script>
+</head> 
+<body ng-app="directiveApp">
+	<div ng-controller="directiveController">
+		<div style="width:400px; height:500px;background:yellow;top:{{tmpObj.top + 10}}px;left:{{tmpObj.left + 10}}px;" class="route-panel"  ng-repeat="tmpObj in Data.List"> 
+			{{tmpObj.Name}}
+		
+			<div ng-controller="routeListController" >
+					<routelist ng-model="tmpObj" routeclick="routeclick(tmpObj)" ></routelist>
+			</div>
+		</div>
+
+	
+	<div >
+		<ui-gmap-google-map  center='Data.map.center' zoom='Data.map.zoom' draggable="true" >
+			<ui-gmap-markers models="Data.map.markers" coords="'self'" icon="'icon'"></ui-gmap-markers>
+		</ui-gmap-google-map>
+	</div>
+	</div>
+	
+	
+</body>
+</html>

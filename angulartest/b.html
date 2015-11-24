@@ -1,0 +1,27 @@
+<!DOCTYPE html> 
+<html lang="en" ng-app="helloApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.js"></script>
+</head>
+<body ng-controller="HelloCtrl">
+	<li ng-repeat="n in name" ng-click="aab()">
+      {{n.aa}}
+    <p>{{n.b}}</p>
+    </li>
+<script>
+    var helloApp = angular.module("helloApp", []);
+    helloApp.controller("HelloCtrl", function($scope) {
+    $scope.name = [{aa:123,b:'a'}, {aa:456, b:'b'}];
+    $scope.aab = function(){
+    	var dd = $scope.name[1];
+    	$scope.name[1] = $scope.name[0] ;
+    	$scope.name[0] = dd;
+
+    }
+    });
+</script>
+
+</body>
+</html>
